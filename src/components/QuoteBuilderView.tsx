@@ -324,6 +324,28 @@ export const QuoteBuilderView: React.FC<QuoteBuilderViewProps> = ({
         </div>
       </div>
 
+      {/* Mobile Quick-Jump Strip to Summary & WhatsApp Actions */}
+      <div className="lg:hidden bg-white border border-zinc-200 rounded-xl px-4 py-3 flex items-center justify-between gap-3">
+        <div>
+          <div className="text-[11px] font-medium text-zinc-500">
+            Total ({quote.items.length} {quote.items.length === 1 ? 'item' : 'itens'})
+          </div>
+          <div className="text-lg font-bold font-mono tabular-nums text-red-600">
+            {formatBRL(totals.grandTotal)}
+          </div>
+        </div>
+        <button
+          type="button"
+          onClick={() =>
+            document.getElementById('quote-summary')?.scrollIntoView({ behavior: 'smooth' })
+          }
+          className="min-h-[42px] px-4 py-2 rounded-xl bg-[#16A34A] text-white text-xs font-semibold inline-flex items-center gap-1.5 shrink-0 cursor-pointer"
+        >
+          <MessageCircle className="w-4 h-4" />
+          <span>Enviar / Resumo</span>
+        </button>
+      </div>
+
       {/* Inline Feedback Banner */}
       {feedback && (
         <div
@@ -593,7 +615,7 @@ export const QuoteBuilderView: React.FC<QuoteBuilderViewProps> = ({
         </div>
 
         {/* Right Column: Active Quote Summary & WhatsApp/PDF Actions */}
-        <div className="lg:col-span-5 lg:sticky lg:top-6 space-y-4">
+        <div id="quote-summary" className="lg:col-span-5 lg:sticky lg:top-6 space-y-4 scroll-mt-16">
           <div className="bg-white border border-zinc-200 rounded-2xl p-4 sm:p-5 space-y-4">
             <div className="flex items-center justify-between border-b border-zinc-100 pb-3">
               <div>
@@ -654,7 +676,7 @@ export const QuoteBuilderView: React.FC<QuoteBuilderViewProps> = ({
                       </button>
                     </div>
 
-                    <div className="flex items-center justify-between gap-2">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
                       <div className="inline-flex items-center border border-zinc-200 rounded-lg bg-zinc-50">
                         <button
                           type="button"

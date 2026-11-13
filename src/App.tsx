@@ -263,7 +263,7 @@ export default function App() {
       {/* Desktop Sidebar */}
       <aside className="hidden lg:flex lg:flex-col lg:w-64 lg:fixed lg:inset-y-0 bg-[#18181B] text-white border-r border-zinc-800 z-30">
         <div className="h-16 px-6 flex items-center gap-3 border-b border-zinc-800 shrink-0">
-          <img src="/icon.svg" alt="RD Motos" className="w-8 h-8 rounded-lg shrink-0" />
+          <img src="./icon.svg" alt="RD Motos" className="w-8 h-8 rounded-lg shrink-0" />
           <span className="font-display-heading text-2xl font-bold tracking-tight text-white whitespace-nowrap">
             {settings.name || 'RD Motos'}
           </span>
@@ -346,7 +346,7 @@ export default function App() {
         {/* Mobile Compact Sticky Top Bar (48px - respects <= 15% mobile sticky cap) */}
         <header className="lg:hidden sticky top-0 z-30 h-12 px-4 bg-[#18181B] text-white flex items-center justify-between gap-3 pt-safe">
           <div className="flex items-center gap-2 min-w-0">
-            <img src="/icon.svg" alt="RD Motos" className="w-6 h-6 rounded-md shrink-0" />
+            <img src="./icon.svg" alt="RD Motos" className="w-6 h-6 rounded-md shrink-0" />
             <span className="font-display-heading text-lg font-bold tracking-tight whitespace-nowrap">
               {settings.name || 'RD Motos'}
             </span>
